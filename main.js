@@ -9,7 +9,7 @@ var mainWin = null;
 
 // 全てのウィンドウが閉じたら終了
 app.on('window-all-closed', function() {
-    app.quit();
+    //app.quit();
 });
 
 // Electronの初期化を待つ
@@ -20,6 +20,7 @@ app.on('ready', function() {
 
   // ウィンドウが閉じられたらアプリも終了
   mainWin.on('closed', function() {
-    mainWin = null;
+  	console.log("closed");
+    app.quit();
   });
 });
