@@ -5,22 +5,26 @@ var BrowserWindow = require('browser-window');
 
 require('crash-reporter').start();
 
-var mainWin = null;
+// mainWindowはグローバルにしとかないとGCで勝手に閉じてしまう
+var mainWindow = null;
 
-// 全てのウィンドウが閉じたら終了
+// ウインドウが全部閉じたら実行
 app.on('window-all-closed', function() {
-    //app.quit();
+  // よくあるアプリのように、Cmd + Q が押されない限りアプリは終了させない
+  if (process.platform != 'darwin') {
+    app.quit();
+  }
 });
 
-// Electronの初期化を待つ
+// Electronの初期化完了後に実行
 app.on('ready', function() {
-  // メイン画面の表示。ウィンドウの幅、高さを指定できる
-  mainWin = new BrowserWindow({width: 800, height: 600});
-  mainWin.loadUrl('file://' + __dirname + '/index.html');
+  // メインウインドウ
+  mainWindow = new BrowserWindow({width: 800, height: 600});
+  mainWindow.loadUrl('file://' + __dirname + '/index.html');
 
-  // ウィンドウが閉じられたらアプリも終了
-  mainWin.on('closed', function() {
-  	console.log("closed");
-    app.quit();
+  // メインウィンドウが閉じられたら実行
+  mainWindow.on('closed', function() {
+    // 参照外し
+    mainWindow = null;
   });
 });

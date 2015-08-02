@@ -1,39 +1,33 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
-    <meta property="og:title" content="Milkcocoa Chat with Electron" />
-    <title>Milkcocoa Chat with Electron</title>
-    <link rel="stylesheet" href="style.css" type="text/css" />
-    <script src="index.js"></script>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Milkcocoa Chat with Electron</title>
+  <link rel="stylesheet" href="style.css" type="text/css" />
+  <script src="index.js"></script>
 </head>
 
 <body>
-    <div class="header">
-        <h1 class="logo">Milkcocoa Chat with Electron</h1>
+  <div class="header">
+    <h1 class="logo">Milkcocoa Chat with Electron</h1>
+  </div>
+
+  <div class="container">
+    <div class="postarea cf">
+      <div class="postarea-text">
+        <textarea name="" id="content" cols="30" rows="10" placeholder="Enterで投稿"></textarea>
+      </div>
+      <div class="postarea-share cf">
+      </div>
+      <button id="post" class="postarea-button">投稿する</button>
     </div>
+  </div>
 
-    <div class="container">
-        <div class="postarea cf">
+  <div id="messages" class="content">
+    <div id="dummy"></div>
+  </div>
 
-            <div class="postarea-text">
-                <textarea name="" id="content" cols="30" rows="10" placeholder="Enterで投稿"></textarea>
-            </div>
-
-            <div class="postarea-share cf">
-            </div>
-
-
-            <button id="post" class="postarea-button">投稿する</button>
-        </div>
-    </div>
-
-    <div id="messages" class="content">
-        <div id="dummy"></div>
-    </div>
-
-    <p class="footer"><strong>Powered by <a href="http://mlkcca.com/">Milkcocoa</a></strong></p>
+  <p class="footer"><strong>Powered by <a href="http://mlkcca.com/">Milkcocoa</a></strong></p>
 </body>
 </html>
