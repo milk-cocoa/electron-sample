@@ -2,7 +2,7 @@
 
 var remote = require('remote');
 var MilkCocoa = remote.require('milkcocoa');
-var $ = require('./jquery.min.js');
+var $ = require('./lib/jquery.min.js');
 
 //1.ミルクココアインスタンスを作成
 var milkcocoa = new MilkCocoa("app_id.mlkcca.com");
