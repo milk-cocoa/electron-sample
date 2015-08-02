@@ -10,7 +10,7 @@ var mainWindow = null;
 
 // ウインドウが全部閉じたら実行
 app.on('window-all-closed', function() {
-  // よくあるアプリのように、Cmd + Q が押されない限りアプリは終了させない
+  // Macとかでは、Cmd + Q が押されない限りアプリは終了させない
   if (process.platform != 'darwin') {
     app.quit();
   }

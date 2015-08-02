@@ -16,22 +16,22 @@ $(function() {
   ds.stream().size(30).sort("desc").next(function(err, data) {
     if(err) alert(err);
     data.forEach(function(d) {
-      renderMessage(d.value);
+      renderMessage(d);
     });
   });
 
   //4."message"データストアのプッシュイベントを監視
   ds.on("push", function(e) {
-    renderMessage(e.value);
+    renderMessage(e);
   });
 
   var last_message = "dummy";
 
   function renderMessage(message) {
-    var message_html = '<p class="post-text">' + escapeHTML(message.content) + '</p>';
+    var message_html = '<p class="post-text">' + escapeHTML(message.value.content) + '</p>';
     var date_html = '';
-    if(message.date) {
-       date_html = '<p class="post-date">'+escapeHTML( new Date(message.date).toLocaleString())+'</p>';
+    if(message.value.date) {
+       date_html = '<p class="post-date">'+escapeHTML( new Date(message.value.date).toLocaleString())+'</p>';
     }
     $("#"+last_message).before('<div id="'+message.id+'" class="post">'+message_html + date_html +'</div>');
     last_message = message.id;
