@@ -1,19 +1,19 @@
 # electron-sample
 Electron sample with Milkcocoa.
 
-**Install `milkcocoa`.**
+Install `milkcocoa`.
 
 ```
 $ npm i
 ```
 
-**Replace `app_id` to Your App ID(after create account of [Milkcocoa](https://mlkcca.com/) & create app) **
+Replace `app_id` to Your App ID(after create account of [Milkcocoa](https://mlkcca.com/) & create app)
 
 ```
 var milkcocoa = new MilkCocoa("app_id.mlkcca.com");
 ```
 
-**Run**
+Run
 ```
 $ electron .
 ```
